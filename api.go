@@ -264,7 +264,7 @@ type Panel struct {
 	DataSource      string           `json:"datasource,omitempty"`
 	NullPointMode   string           `json:"nullPointMode,omitempty"`
 	ValueName       string           `json:"valueName,omitempty"`
-	Lines           bool             `json:"lines,omitempty"`
+	Lines           bool             `json:"lines"`
 	Linewidth       int              `json:"linewidth,omitempty"`
 	Points          bool             `json:"points,omitempty"`
 	Pointradius     int              `json:"pointradius,omitempty"`
@@ -273,6 +273,14 @@ type Panel struct {
 	SteppedLine     bool             `json:"steppedLine,omitempty"`
 	TimeFrom        interface{}      `json:"timeFrom,omitempty"`
 	TimeShift       interface{}      `json:"timeShift,omitempty"`
+	YAxis           []VAxis          `json:"yaxes,omitempty"`
+}
+
+type VAxis struct {
+	Format  string `json:"format,omitempty"`
+	LogBase int    `json:"logBase,omitempty"`
+	Label   string `json:"label,omitempty"`
+	Show    bool   `json:"show,omitempty"`
 }
 
 // A Target specify the metrics used by the Panel
